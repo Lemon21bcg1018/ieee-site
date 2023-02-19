@@ -1,0 +1,270 @@
+ <html lang="en">
+
+        <head>
+
+          <meta charset="UTF-8">
+
+          <link rel="apple-touch-icon" type="image/png"
+            href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+          <meta name="apple-mobile-web-app-title" content="CodePen">
+
+          <link rel="shortcut icon" type="image/x-icon"
+            href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+          <link rel="mask-icon" type="image/x-icon"
+            href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg"
+            color="#111">
+
+
+
+          <title>CodePen - Testimonial Slider</title>
+
+
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+          <style>
+            * {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+              font-family: "Poppins", sans-serif;
+            }
+
+            @-webkit-keyframes spin {
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            @keyframes spin {
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+
+            #box {
+              margin-top: 80px;
+              position: relative;
+              width: 80vw;
+              max-width: 41em;
+              min-height: 26em;
+            }
+
+            .img-con {
+              position: absolute;
+            }
+
+            .img-con img {
+              height: 1px;
+              width: 1px;
+            }
+
+            .wrapper {
+              background-color: #ffffff;
+              position: relative;
+              display: flex;
+              border-radius: 0.6em;
+              box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
+            }
+
+            .testimonial-container {
+              width: 85%;
+              height: 100%;
+              position: relative;
+              margin: auto;
+              padding: 1.8em 1.2em;
+            }
+
+            .testimonial-container p {
+              color: #8c8c90;
+              text-align: center;
+              font-size: 0.9em;
+              line-height: 2em;
+              letter-spacing: 0.05em;
+            }
+
+            .testimonial-container img {
+              display: block;
+              margin: 1.8em auto 1.25em auto;
+              border-radius: 50%;
+              width: 4.4em;
+            }
+
+            .testimonial-container h3 {
+              color: #2d3d67;
+              font-size: 1em;
+              text-align: center;
+            }
+
+            .testimonial-container h6 {
+              color: #bcc4da;
+              font-size: 0.9em;
+              letter-spacing: 0.03em;
+              font-weight: 400;
+              text-align: center;
+            }
+
+            .wrapper button {
+              font-size: 1.8em;
+              color: #0a69ed;
+              height: 2.2em;
+              width: 2.2em;
+              position: absolute;
+              margin: auto;
+              top: 0;
+              bottom: 0;
+              background-color: #ffffff;
+              border: none;
+              border-radius: 50%;
+              box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+              cursor: pointer;
+            }
+
+            button#next {
+              right: -1.1em;
+            }
+
+            button#prev {
+              left: -1.1em;
+            }
+
+            .testimonial a {
+              position: relative;
+              display: block;
+              background-color: #ffffff;
+              color: #0a69ed;
+              text-decoration: none;
+              font-size: 1.2em;
+              font-weight: 600;
+              text-align: center;
+              padding: 0.9em 0;
+              border-radius: 0.3em;
+              margin-top: 30px;
+            }
+
+            .fab {
+              color: #ff0000;
+            }
+
+            @media screen and (max-width: 650px) {
+              .wrapper {
+                font-size: 14px;
+              }
+            }
+          </style>
+
+          <script>
+            window.console = window.console || function (t) { };
+          </script>
+
+
+
+          <script>
+            if (document.location.search.match(/type=embed/gi)) {
+              window.parent.postMessage("resize", "*");
+            }
+          </script>
+
+
+        </head>
+
+        <body translate="no">
+          <div id="loader" style="display: none;"></div>
+          <div id="box" style="display: block;">
+            <div class="img-con">
+              <img src="https://i.postimg.cc/gJDkZrNn/profile-image-1.png">
+              <img src="https://i.postimg.cc/8kZzkJ7Y/profile-image-2.png">
+              <img src="https://i.postimg.cc/90gmLK32/profile-image-3.png">
+              <img src="https://i.postimg.cc/6qp6Lwmz/profile-image-4.png">
+            </div>
+            <div class="wrapper">
+              <div class="testimonial-container" id="testimonial-container">
+                <p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis aute irure dolor in reprehenderit</p>
+                <img src="https://i.postimg.cc/6qp6Lwmz/profile-image-4.png">
+                <h3>Nicola Blakely</h3>
+                <h6>CEO,Zeal Wheels</h6>
+              </div>
+              <button id="prev" onclick="prev()">&lt;</button>
+              <button id="next" onclick="next()">&gt;</button>
+            </div>
+          </div>
+          <script
+            src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+          <script id="rendered-js">
+            window.addEventListener("load", function () {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("box").style.display = "block";
+            });
+            const testimonials = [
+              {
+                name: "Eva Sawyer",
+                job: "CEO, Fashworks",
+                image: "https://i.postimg.cc/gJDkZrNn/profile-image-1.png",
+                testimonial:
+                  "Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur"
+              },
+
+              {
+                name: "Katey Topaz",
+                job: "Developer, TechCrew",
+                image: "https://i.postimg.cc/8kZzkJ7Y/profile-image-2.png",
+                testimonial:
+                  "Elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla"
+              },
+
+              {
+                name: "Jae Robin",
+                job: "UI Designer, Affinity Agency",
+                image: "https://i.postimg.cc/90gmLK32/profile-image-3.png",
+                testimonial:
+                  "Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis"
+              },
+
+              {
+                name: "Nicola Blakely",
+                job: "CEO,Zeal Wheels",
+                image: "https://i.postimg.cc/6qp6Lwmz/profile-image-4.png",
+                testimonial:
+                  "Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
+              }];
+
+
+            let i = 0; // current slide
+            let j = testimonials.length; // total slides
+            let testimonialContainer = document.getElementById("testimonial-container");
+            function next() {
+              i = (j + i + 1) % j;
+              displayTestimonial();
+            }
+
+            function prev() {
+              i = (j + i - 1) % j;
+              displayTestimonial();
+            }
+            let displayTestimonial = () => {
+              testimonialContainer.innerHTML = `
+              <p>${testimonials[i].testimonial}</p>
+               <img src=${testimonials[i].image}></img>
+              <h3>${testimonials[i].name}</h3>
+              <h6>${testimonials[i].job}</h6>
+              `;
+            };
+            window.onload = displayTestimonial;
+      //# sourceURL=pen.js
+          </script>
+
+
+
+
+
+
+
+        </body>
+
+        </html>

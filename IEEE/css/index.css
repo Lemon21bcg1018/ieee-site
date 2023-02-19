@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+/* #circle {
+    position: absolute;
+    z-index: 0;
+    background: lightblue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    right:20px;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: white !important;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    background-color: transparent !important;
+}
+
+.collapse {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: max-content;
+    margin: auto;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+    padding: 10px 0 10px 0;
+    margin-left: 30px;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.988rem;
+    cursor: pointer;
+    margin: 0 10px 0;
+    text-transform: uppercase;
+    color: #545454;
+}
+
+.nav-link:hover {
+    color: #004aad !important;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #004aad;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    color: #004aad;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.active {
+    color: #004aad !important;
+}
+
+.btn {
+    background-color: #004aad;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.988rem;
+    padding: 5px 17px 5px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.btn:hover {
+    background-color: #004aad;
+    color: white;
+    transform: scale(1.05);
+}
+
+.none {
+    display: none;
+}
+
+/* header section */
+.header {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.head-1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 22px;
+    font-size: 3.163rem;
+}
+
+.head-2 {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: #004aad;
+    font-size: 2.825rem;
+    margin-bottom: 15px;
+}
+
+.para {
+    width: 55%;
+    margin: auto;
+    font-size: 1.181rem;
+    color: #737373;
+    font-weight: 250;
+    margin-bottom: 22px;
+}
+
+.head-button {
+    background-color: #004aad;
+    color: white;
+    font-size: 1.238rem;
+    text-transform: capitalize;
+    padding: 10px;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* image caraousel css */
+.carousel {
+    height: 600px;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 500px 100px;
+    grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+}
+
+
+.contain-society {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.socities {
+    margin-left: auto;
+    width: 60rem;
+    background-color: #004aad !important;
+    color: white;
+    border-radius: 20px 0 0 20px;
+    overflow-y: hidden;
+}
+
+
+.testimonial {
+    display: flex;
+    align-items: center;
+}
+
+.test-image {
+    width: 100%;
+}
+
+
+.events-sec {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.events {
+    margin-left: auto;
+}
+
+/* navbar mobile view */
+@media only screen and (max-width: 1000px) {
+    .btn {
+        display: none;
+        margin: 0;
+    }
+
+    .none {
+        display: inline;
+    }
+}
+
+.faq {
+    padding: 80px;
+    color: white;
+    background-image: url(/IEEE/images/background-faq.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.faq h2 {
+    color: white;
+    margin-bottom: 2%;
+    font-size: 280%;
+}
+
+.a1 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+}
+
+.a1 button {
+    font-size: 20px;
+    color: white;
+    width: 25%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.503);
+    border-width: 2px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+}
+
+.a1 button:hover {
+    scale: 1.05;
+}
